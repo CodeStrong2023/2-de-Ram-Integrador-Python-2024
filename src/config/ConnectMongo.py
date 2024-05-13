@@ -4,9 +4,14 @@ import pymongo
 class ConnectMongo:
 
     def __init__(self):
-        self.uri = "mongodb+srv://2deram:2deram@tutoria.wxrtz25.mongodb.net/"
-        self.client = pymongo.MongoClient(self.uri)
-        self.db = self.client["adoptame"]
+        self.db = self.connect()
+
+    def connect(self):
+        uri = "mongodb+srv://2deram:2deram@tutoria.wxrtz25.mongodb.net/"
+        client = pymongo.MongoClient(uri)
+        db = client["adoptame"]
+        return db
+
     def get_collection_db(self, collection_name):
         collections = self.db.list_collection_names()
         if collection_name in collections:
