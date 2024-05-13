@@ -1,21 +1,22 @@
-from src.config.MongoConfig import MongoConfig
 
-
+from src.User.UserModel import *
+from src.config.ConnectMongo import ConnectMongo
+from src.utils.InputUtils import InputUtils
+from src.utils.StrUtils import StrUtils
 class UserServices:
-    collections = None
 
+    def __init__(self):
+        self.connection = ConnectMongo()
+        self.user_collection = self.connection.db.get_collection("users")
 
-    def __init__(self, db):
-        self.mongo = MongoConfig().db
-        self.create_collection()
-        self.user_collection = self.mongo.get_collection("user")
-    def create_collection(self):
-        collections = self.mongo.list_collection_names()
-        for name in collections:
-            if name == "user":
-                return False
-            else:
-                self.mongo.create_collection("user")
-
-    def create_user(self, user):
+    def create_user(self):
+        StrUtils.create_header("Registro de Usuario")
+        user_model = UserModel()
+        name = InputUtils.str_input("Ingrese su nombre completo: ")
+        email = InputUtils.str_input("Ingrese su email: ")
+        password = InputUtils.str_input("Ingrese su password: ")
+        age = InputUtils.int_input("Ingrese su edad: ")
+        dni = InputUtils.str_input("Ingrese su dni: ")
+        user = user_model.create_user(name, email, password, age, dni)
         self.user_collection.insert_one(user)
+        print("Usuario Registrado")

@@ -1,16 +1,7 @@
-
-
-from config.MongoConfig import MongoConfig 
+from src.User.UserServices import *
 
 class App:
-    mongoConfig = MongoConfig()
-    def __init__ (self):
-        self.mongoConfig.connect()
-        self.mongoConfig.create_collection("prueba")
-        self.mongoConfig.create_collection("prueba2")
 
-        
-    
-    
-        
-        
+    def __init__(self):
+        self.user_services = UserServices()
+        self.user_services.create_user()
