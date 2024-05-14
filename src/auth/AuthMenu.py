@@ -1,13 +1,17 @@
 from src.utils.InputUtils import InputUtils
 from src.User.UserServices import UserServices
-class auth_menu:
+
+
+class AuthMenu:
     option = 0
+
     def __init__(self):
         self.auth_menu = [
             "1 - Login",
-            "2 - Register",
-            "3 - Exit"
+            "2 - Registro",
+            "3 - Salir"
         ]
+
     def display_menu(self):
         for item in self.auth_menu:
             print(item)
@@ -19,8 +23,3 @@ class auth_menu:
             register_menu.create_user()
         elif self.option == 3:
             print("Gracias por su visita")
-
-    
-
- 
-menu = auth_menu().display_menu()
