@@ -2,14 +2,14 @@ from src.utils.InputUtils import InputUtils
 from src.User.UserServices import UserServices
 
 
-class auth_menu:
+class AuthMenu:
     option = 0
 
     def __init__(self):
         self.auth_menu = [
             "1 - Login",
-            "2 - Register",
-            "3 - Exit"
+            "2 - Registro",
+            "3 - Salir"
         ]
 
     def display_menu(self):
