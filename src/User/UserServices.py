@@ -1,7 +1,6 @@
 
 from src.User.UserModel import *
 from src.config.ConnectMongo import ConnectMongo
-from src.utils.InputUtils import InputUtils
 from src.utils.StrUtils import StrUtils
 class UserServices:
     def __init__(self):
