@@ -1,7 +1,7 @@
 class InputUtils:
 
     @staticmethod
-    def str_input(input_string):
+    def str_input(input_string, menu):
         entry = input(input_string)
         return entry
 
