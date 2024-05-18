@@ -20,7 +20,8 @@ class AdminMenu:
 
     def select_menu(self, option):
         if option == 1:
-            print("Mostrar listado de usuarios")
+            users = list(UserServices().get_all_users())
+            print(users)
         elif option == 2:
             print("Mostar listado de mascotas")
         elif option == 3:
