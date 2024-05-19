@@ -35,3 +35,11 @@ class PetService:
     def update_pet(self, pet_id, pet_data):
         self.pet_collection.update_one({"_id": pet_id}, {"$set": pet_data})
         print("Mascota actualizada con éxito")
+
+    #Borrar una mascota por su id
+    def delete_pet(self, pet_id):
+        result = self.pet_collection.delete_one({"_id": pet_id})
+        if result.deleted_count > 0:
+            print("Mascota eliminada con éxito")
+        else:
+            print("No se encontró ninguna mascota con el ID proporcionado")

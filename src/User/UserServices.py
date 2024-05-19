@@ -11,3 +11,14 @@ class UserServices:
         user = UserModel().create_user()
         self.user_collection.insert_one(user)
         print("Usuario Registrado")
+
+    def delete_user(self, user_id, current_user):
+        user = self.user_collection.find_one({"_id": user_id})
+        if user:
+            if self.user_validator.validate_admin_role(current_user):
+                self.user_collection.delete_one({"_id": user_id})
+                print("Usuario eliminado con éxito")
+            else:
+                print("No tienes permisos para eliminar usuarios")
+        else:
+            print("No se encontró ningún usuario con el ID proporcionado")
