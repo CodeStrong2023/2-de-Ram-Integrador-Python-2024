@@ -1,6 +1,7 @@
 import re
-class InputUtils:
 
+
+class InputUtils:
     @staticmethod
     def str_input(input_string):
         entry = input(input_string)
@@ -14,6 +15,15 @@ class InputUtils:
         else:
             print("Debe ingresar un número")
             return InputUtils.int_input(input_string)
+
+    @staticmethod
+    def character_detector(str_input):
+        while True:
+            if len(str_input) < 1:
+                print("Debe ingresar al menos un caracter")
+            else:
+                break
+
     @staticmethod
     def email_input(email):
         entry = input(email)
