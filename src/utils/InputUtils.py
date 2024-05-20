@@ -18,8 +18,12 @@ class InputUtils:
         if entry.isnumeric():
             return int(entry)
         else:
-            print("Debe ingresar un número")
-            return InputUtils.int_input(input_string)
+            if len(input_string) < 1:
+                print("Debe ingresar al menos un caracter")
+                return InputUtils.int_input(input_string)
+            else:
+                print("Debe ingresar un número")
+                return InputUtils.int_input(input_string)
 
 
     @staticmethod
