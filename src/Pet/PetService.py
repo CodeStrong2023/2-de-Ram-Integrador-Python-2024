@@ -5,11 +5,21 @@ from src.utils.StrUtils import StrUtils
 class PetService:
     def __init__(self):
         self.connection = ConnectMongo()
-        self.pet_collection = self.connection.db.get_collection("pets")
+        self.pet_collection = self.connection.get_collection_db("pets")
+
+
+
+        # Método para guardar una nueva mascota en la base de datos
+
+    def save_pet(self, pet_data):
+        # Utilizar el método insert_one de la colección para insertar la mascota
+        inserted_pet = self.pet_collection.insert_one(pet_data)
+        return inserted_pet.inserted_id  # Devolver el ID de la mascota insertada
+
     def create_pet(self):
         StrUtils.create_header("Registro de Mascotas")
         pet = PetModel().create_pet()
-        self.user_collection.insert_one(pet)
+        self.pet_collection.insert_one(pet)
         print("Mascota registrada con éxito")
 
     #Obtener todaslas mascotas
@@ -24,9 +34,9 @@ class PetService:
         return pet
 
     #Guardar Mascota
-    def save_pet(self, pet_data):
-        self.pet_collection.insert_one(pet_data)
-        print("Mascota guardada con éxito")
+    #def save_pet(self, pet_data):
+     #   self.pet_collection.insert_one(pet_data)
+      #  print("Mascota guardada con éxito")
 
     #Actualizar Mascota
     '''Recibe el ID de una mascota y los nuevos datos de la mascota a editar. 
