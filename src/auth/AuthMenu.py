@@ -1,6 +1,6 @@
 from utils.InputUtils import InputUtils
 from User.UserServices import UserServices
-
+from admin.AdminMenu import AdminMenu
 
 
 class AuthMenu:
@@ -17,7 +17,8 @@ class AuthMenu:
             print(item)
         self.option = InputUtils.int_input("Ingrese una opción: ")
         if self.option == 1:
-            print("Ingrese su mail")
+            login_menu = AdminMenu()
+            login_menu.display_menu()
         elif self.option == 2:
             register_menu = UserServices()
             register_menu.create_user()
