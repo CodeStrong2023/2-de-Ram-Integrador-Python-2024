@@ -1,7 +1,7 @@
+from bson import ObjectId
 
 from src.User.UserModel import *
 from src.config.ConnectMongo import ConnectMongo
-from src.utils.InputUtils import InputUtils
 from src.utils.StrUtils import StrUtils
 class UserServices:
     def __init__(self):
@@ -12,3 +12,7 @@ class UserServices:
         user = UserModel().create_user()
         self.user_collection.insert_one(user)
         print("Usuario Registrado")
+    def get_all_users(self):
+        return self.user_collection.find()
+    def get_user_by_id(self, user_id):
+        return self.user_collection.find_one({"_id": ObjectId(user_id)})

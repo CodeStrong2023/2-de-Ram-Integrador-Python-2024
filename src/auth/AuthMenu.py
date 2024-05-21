@@ -2,6 +2,7 @@ from src.utils.InputUtils import InputUtils
 from src.User.UserServices import UserServices
 
 
+
 class AuthMenu:
     option = 0
 
@@ -11,7 +12,6 @@ class AuthMenu:
             "2 - Registro",
             "3 - Salir"
         ]
-
     def display_menu(self):
         for item in self.auth_menu:
             print(item)
