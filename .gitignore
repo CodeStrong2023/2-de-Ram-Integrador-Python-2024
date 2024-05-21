@@ -13,6 +13,7 @@ config.py
 
 # Caché de compilación de Python
 __pycache__/
+*.pyc
 
 # Archivos generados por IDEs
 .vscode/
