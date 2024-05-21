@@ -1,5 +1,4 @@
 from utils.InputUtils import InputUtils
-from utils.MenusEnum import MenusEnum
 
 
 class UserModel:
@@ -11,6 +10,8 @@ class UserModel:
             "age": InputUtils.int_input("Ingrese su edad: "),
             "dni": InputUtils.str_input("Ingrese su dni: "),
             "pets": [],
-            "status": True
+            "status": True,
+            "role": "user",
         }
+
         return user
