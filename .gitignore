@@ -22,5 +22,4 @@ __pycache__/
 settings.ini
 
 # Ignore Python bytecode
-__pycache__/
 *.py[cod]
