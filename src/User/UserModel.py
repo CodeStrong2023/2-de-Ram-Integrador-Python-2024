@@ -1,5 +1,5 @@
-from src.utils.InputUtils import InputUtils
-from src.utils.MenusEnum import MenusEnum
+from utils.InputUtils import InputUtils
+from utils.MenusEnum import MenusEnum
 
 
 class UserModel:

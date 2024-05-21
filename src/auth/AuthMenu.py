@@ -1,5 +1,5 @@
-from src.utils.InputUtils import InputUtils
-from src.User.UserServices import UserServices
+from utils.InputUtils import InputUtils
+from User.UserServices import UserServices
 
 
 
