@@ -23,10 +23,7 @@ class PetService:
         pet = self.pet_collection.find_one({"_id": pet_id})
         return pet
 
-    #Guardar Mascota
-    def save_pet(self, pet_data):
-        self.pet_collection.insert_one(pet_data)
-        print("Mascota guardada con éxito")
+   
 
     #Actualizar Mascota
     '''Recibe el ID de una mascota y los nuevos datos de la mascota a editar. 
