@@ -1,1 +1,21 @@
-.idea
+# Archivos generados por el entorno virtual de Python
+venv/
+
+# Directorio de archivos de logs
+logs/
+
+# Directorio de datos de MongoDB
+data/
+
+# Archivos con información de conexión a MongoDB
+config.py
+
+# Caché de compilación de Python
+__pycache__/
+
+# Archivos generados por IDEs
+.vscode/
+.idea/
+
+# Archivos de configuración local
+settings.ini
