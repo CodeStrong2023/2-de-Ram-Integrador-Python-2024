@@ -1,5 +1,5 @@
-from src.User.UserServices import *
-from src.auth.AuthMenu import AuthMenu
+from auth.AuthMenu import AuthMenu
+
 
 
 class App:

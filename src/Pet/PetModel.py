@@ -1,4 +1,4 @@
-from src.utils.InputUtils import InputUtils
+from utils.InputUtils import InputUtils
 
 
 class PetModel:
