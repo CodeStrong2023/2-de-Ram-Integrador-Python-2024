@@ -12,7 +12,7 @@ class PetService:
         self.user_collection.insert_one(pet)
         print("Mascota registrada con éxito")
 
-    #Obtener todaslas mascotas
+    #Obtener todas las mascotas
     '''Devuelve un arreglo de mascotas con todas las mascotas en la BBDD'''
     def get_all_pets(self):
         pets = self.pet_collection.find()

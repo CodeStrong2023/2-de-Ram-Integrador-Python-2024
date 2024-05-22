@@ -1,5 +1,6 @@
 from src.utils.InputUtils import InputUtils
-
+from src.Pet.PetService import PetService
+from src.User.UserMenuServices import UserMenuServices
 
 class UserMenu:
     def __init__(self):
@@ -27,15 +28,20 @@ class UserMenu:
                 3- Tiempo, compromiso y dedicación. Asegúrate de estar dispuesto a cuidarla y brindarle atención.
                 4- Ser una persona o familia responsable que los quiera como a un miembro más, los proteja y cuide.
             ''')
+            self.display_menu()
         elif option == 2:
             print("Animales en adopcion: ")
-            # insertar metodo para insertar y mostrar animales en adopcion con sus caracteristicas
+            PetService.get_all_pets()
+            self.display_menu()
         elif option == 3:
             print("Elija el animal o los animales que desea adoptar: ")
-            # insertar metodo para mostrar animales y permitir seleccionar uno o varios
+            PetService.get_all_pets()
+            UserMenuServices.seleccionar_mascota()
+            self.display_menu()
         elif option == 4:
             print("Otras opciones del usuario")
             # insertar metodo con menu desplegable para que el usuario gestione su propio usuario
+            self.display_menu()
         elif option == 5:
             print("Regresando al menú principal")
             # insertar metodo para regresar al menu principal
