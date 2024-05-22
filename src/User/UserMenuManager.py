@@ -2,6 +2,12 @@ from User.UserServices import UserServices
 from utils.MenusEnum import MenusEnum
 from utils.MenusManager import MenusManager
 
+""" 
+Este menú manager se encarga de redirigir a los diferentes menús de la aplicación,
+que gestiona los servicios de los usuarios que vamos a ejecutar en dependiendo
+si las opciones vienen del menú de usuario o del menú de administrador
+"""
+
 
 class UserMenuManager:
 
