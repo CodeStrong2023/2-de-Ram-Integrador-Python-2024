@@ -1,4 +1,5 @@
 from utils.InputUtils import InputUtils
+from utils.Validations.User_validations import UserValidations
 
 
 class UserModel:
@@ -13,5 +14,9 @@ class UserModel:
             "status": True,
             "role": "user",
         }
+        # Chequea si el email ya se encuentra registrado
+        if UserValidations().check_mail_exists(user["email"]):
+            print("El email ya se encuentra registrado")
+            return self.create_user()
 
         return user
