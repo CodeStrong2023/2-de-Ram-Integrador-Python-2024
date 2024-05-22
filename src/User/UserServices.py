@@ -1,5 +1,6 @@
 from bson import ObjectId
 
+from Pet.PetManagementMenu import PetService
 from User.UserModel import *
 from config.ConnectMongo import ConnectMongo
 from utils.StrUtils import StrUtils
@@ -16,11 +17,34 @@ class UserServices:
         self.user_collection.insert_one(user)
         print("Usuario Registrado")
 
+    # Obtiene todos los usuarios
     def get_all_users(self):
         return self.user_collection.find()
 
+    # Obtiene un usuario por su id
     def get_user_by_id(self, user_id):
         return self.user_collection.find_one({"_id": ObjectId(user_id)})
 
+    # Obtiene un usuario por su email
     def get_user_by_email(self, email):
         return self.user_collection.find_one({"email": email})
+
+    # Eliminamos un usuario cambiando su status a False
+    def delete_user(self, user_id):
+        self.user_collection.update_one(
+            {"_id": ObjectId(user_id)}, {"$set": {"status": False}}
+        )
+        print("Usuario Eliminado")
+
+    # Actualizamos un usuario con la información recibida
+    def update_user(self, user_id, data):
+        self.user_collection.update_one({"_id": ObjectId(user_id)}, {"$set": data})
+        print("Usuario Actualizado")
+
+    # Agregamos una mascota a un usuario
+    def add_pet_to_user(self, user_id, pet_id):
+        pet = PetService().get_pet_by_id(pet_id)
+        self.user_collection.update_one(
+            {"_id": ObjectId(user_id)}, {"$push": {"pets": pet}}
+        )
+        return self.user_collection.find_one({"_id": ObjectId(user_id)})
