@@ -1,6 +1,10 @@
 from User.UserServices import UserServices
 from utils.MenusEnum import MenusEnum
 from utils.MenusManager import MenusManager
+from User.UserMenusDisplay import UserMenusDisplay
+from utils.StrUtils import StrUtils
+from utils.InputUtils import InputUtils
+from utils.Validations.UserValidations import UserValidations
 
 """ 
 Este menú manager se encarga de redirigir a los diferentes menús de la aplicación,
@@ -15,9 +19,21 @@ class UserMenuManager:
         if option == 1:
             UserServices().create_user()
         elif option == 2:
-            UserServices().get_all_users()
+            users = list(UserServices().get_all_users())
+            StrUtils.create_header("Listado de usuarios registrados")
+            for user in users:
+                UserMenusDisplay().display_user(user)
+            MenusManager(MenusEnum.USER_ADMIN_MENU)
         elif option == 3:
-            UserServices().get_user_by_email()
+            email = InputUtils.email_input("Ingrese el email del usuario: ")
+            email_exists = UserValidations().check_mail_exists(email)
+            while not email_exists:
+                email = InputUtils.email_input("El email ingresado no existe, por favor ingrese un email válido: ")
+                email_exists = UserValidations().check_mail_exists(email)
+            user = UserServices().get_user_by_email(email)
+            StrUtils.create_header("Usuario encontrado")
+            UserMenusDisplay().display_user(user)
+            MenusManager(MenusEnum.USER_ADMIN_MENU)
         elif option == 4:
             UserServices().update_user()
         elif option == 5:
