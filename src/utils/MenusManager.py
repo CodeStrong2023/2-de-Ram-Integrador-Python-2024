@@ -5,18 +5,20 @@ class MenusManager:
     def __init__(self, menu):
         from auth.AuthMenu import AuthMenu
         from admin.AdminMenu import AdminMenu
-        print(menu)
+        from User.UserMenu import UserMenu
+        from Pet.PetManagementMenu import PetManagementMenu
+
         if menu == MenusEnum.MAIN_MENU:
-            m = AuthMenu().display_menu()
+            AuthMenu().display_menu()
         elif menu == MenusEnum.USER_MENU:
-            print("Opciones de usuario")
+            UserMenu().user_menu()
         elif menu == MenusEnum.PET_MENU:
-            print("Opciones de mascotas")
+            PetManagementMenu().display_menu()
         elif menu == MenusEnum.ADMIN_MENU:
-            print("Opciones de administrador")
+            AdminMenu().display_menu()
         elif menu == MenusEnum.LOGIN_MENU:
             print("Opciones de login")
         elif menu == MenusEnum.USER_ADMIN_MENU:
             AdminMenu().user_menu()
         elif menu == MenusEnum.PET_ADMIN_MENU:
-            print("Opciones de mascotas")
+            AdminMenu().pet_menu()

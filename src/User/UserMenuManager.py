@@ -2,21 +2,23 @@ from User.UserServices import UserServices
 from utils.MenusEnum import MenusEnum
 from utils.MenusManager import MenusManager
 
+
 class UserMenuManager:
 
     def user_admin_menu(self, option):
         if option == 1:
-            user = UserServices().create_user()
+            UserServices().create_user()
         elif option == 2:
-            print("Listar usuarios")
-            m = MenusManager(MenusEnum.USER_ADMIN_MENU)
+            UserServices().get_all_users()
         elif option == 3:
-            print("Opciones de veterinarios")
+            UserServices().get_user_by_email()
         elif option == 4:
-            print("Opciones de citas")
+            UserServices().update_user()
         elif option == 5:
-            print("Opciones de servicios")
+            UserServices().delete_user()
         elif option == 6:
-            print("Opciones de productos")
+            MenusManager(MenusEnum.ADMIN_MENU)
         else:
             print("Opción no válida")
+            print("")
+            MenusManager(MenusEnum.USER_ADMIN_MENU)
