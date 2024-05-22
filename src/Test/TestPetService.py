@@ -1,10 +1,10 @@
 import unittest
 from unittest.mock import MagicMock, patch
 
-from src.config.ConnectMongo import ConnectMongo
-from src.Pet.PetModel import PetModel
+from config.ConnectMongo import ConnectMongo
+from Pet.PetModel import PetModel
 
-from src.Pet.PetService import PetService
+from Pet.PetService import PetService
 
 class TestPetService(unittest.TestCase):
 
@@ -25,7 +25,7 @@ class TestPetService(unittest.TestCase):
     # Asignar el mock de la colección de mascotas a la conexión simulada
     mock_db_connection.pet_collection = mock_pet_collection
 
-    @patch('src.config.ConnectMongo.ConnectMongo')
+    @patch('config.ConnectMongo.ConnectMongo')
     def setUp(self, mock_mongo):
         self.connect_mock = MagicMock()
         self.connect_mock.find.return_value = [{"name": "Mascota", "age": 4}]
@@ -39,7 +39,7 @@ class TestPetService(unittest.TestCase):
         self.pet_service_instance.create_pet()
         self.assertTrue(len(self.pet_service_instance.pet_collection.insert_one.call_args) > 0)
 
-    from src.config.ConnectMongo import ConnectMongo
+    from config.ConnectMongo import ConnectMongo
 
     class PetService:
         def __init__(self):
@@ -101,7 +101,7 @@ class TestPetService(unittest.TestCase):
         # Comparar el id del objeto devuelto con el id esperado
         self.assertEqual(retrieved_pet["_id"], pet_data["_id"])
 
-    @patch('src.config.ConnectMongo.ConnectMongo')
+    @patch('config.ConnectMongo.ConnectMongo')
     def test_save_pet(self, mock_mongo):
         mock_mongo.return_value = self.connect_mock
         self.pet_service_instance.pet_collection = self.connect_mock
@@ -119,7 +119,7 @@ class TestPetService(unittest.TestCase):
         self.pet_service_instance.save_pet(pet_data)
         self.assertTrue(len(self.pet_service_instance.pet_collection.insert_one.call_args) > 0)
 
-    @patch('src.config.ConnectMongo.ConnectMongo')
+    @patch('config.ConnectMongo.ConnectMongo')
     def test_save_pet(self, mock_mongo):
         mock_mongo.return_value = self.connect_mock
         self.pet_service_instance.pet_collection = self.connect_mock
@@ -152,7 +152,7 @@ class TestPetService(unittest.TestCase):
         # Verifica que se haya llamado al método insert_one con los datos correctos
         self.connect_mock.insert_one.assert_called_once_with(pet_data)
 
-    @patch('src.config.ConnectMongo.ConnectMongo')
+    @patch('config.ConnectMongo.ConnectMongo')
     def test_update_pet(self, mock_mongo):
         mock_mongo.return_value = self.connect_mock
         self.pet_service_instance.pet_collection = self.connect_mock
