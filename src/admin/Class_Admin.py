@@ -6,12 +6,12 @@ class MyAdmin:
         self.name = name  # nombre
         self.lastname = lastname  # apellido
         self.user = user  # usuario
-        self.password = password #contraseña
-        self.age = age # edad
+        self.password = password  # contraseña
+        self.age = age  # edad
         self.dni = dni  # Documento nacional de identidad
         self.birth_date = birth_date  # fecha de nacimiento
-        admin.howMany += 1
-        _id_admin = admin.howMany
+        MyAdmin.howMany += 1
+        _id_admin = MyAdmin.howMany
 
     def __str__(self):
         return f'''
