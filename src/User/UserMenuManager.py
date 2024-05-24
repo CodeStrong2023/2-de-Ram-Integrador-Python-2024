@@ -1,10 +1,10 @@
-from User.UserServices import UserServices
-from utils.MenusEnum import MenusEnum
-from utils.MenusManager import MenusManager
-from User.UserMenusDisplay import UserMenusDisplay
-from utils.StrUtils import StrUtils
-from utils.InputUtils import InputUtils
-from utils.Validations.UserValidations import UserValidations
+from src.User.UserServices import UserServices
+from src.utils.MenusEnum import MenusEnum
+from src.utils.MenusManager import MenusManager
+from src.User.UserMenusDisplay import UserMenusDisplay
+from src.utils.StrUtils import StrUtils
+from src.utils.InputUtils import InputUtils
+from src.utils.Validations.UserValidations import UserValidations
 
 """ 
 Este menú manager se encarga de redirigir a los diferentes menús de la aplicación,

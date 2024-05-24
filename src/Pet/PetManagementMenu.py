@@ -1,9 +1,9 @@
 import pymongo
 from bson import ObjectId
-from config.ConnectMongo import ConnectMongo
-from Pet.PetModel import PetModel
-from utils.StrUtils import StrUtils
-from utils.InputUtils import InputUtils
+from src.config.ConnectMongo import ConnectMongo
+from src.Pet.PetModel import PetModel
+from src.utils.StrUtils import StrUtils
+from src.utils.InputUtils import InputUtils
 
 class PetService:
     def __init__(self):

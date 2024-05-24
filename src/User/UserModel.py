@@ -1,5 +1,5 @@
-from utils.InputUtils import InputUtils
-from utils.Validations.UserValidations import UserValidations
+from src.utils.InputUtils import InputUtils
+from src.utils.Validations.UserValidations import UserValidations
 
 
 class UserModel:

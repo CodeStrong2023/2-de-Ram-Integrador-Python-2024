@@ -1,9 +1,9 @@
 from bson import ObjectId
 
-from Pet.PetManagementMenu import PetService
-from User.UserModel import *
-from config.ConnectMongo import ConnectMongo
-from utils.StrUtils import StrUtils
+from src.Pet.PetManagementMenu import PetService
+from src.User.UserModel import *
+from src.config.ConnectMongo import ConnectMongo
+from src.utils.StrUtils import StrUtils
 
 
 class UserServices:

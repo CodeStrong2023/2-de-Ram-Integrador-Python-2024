@@ -1,4 +1,4 @@
-from config.ConnectMongo import ConnectMongo
+from src.config.ConnectMongo import ConnectMongo
 
 
 class UserValidations:

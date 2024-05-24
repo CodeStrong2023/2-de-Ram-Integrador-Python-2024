@@ -1,10 +1,9 @@
 import unittest
 from unittest.mock import MagicMock, patch
 
-from config.ConnectMongo import ConnectMongo
-from Pet.PetModel import PetModel
-
-from Pet.PetService import PetService
+from src.config.ConnectMongo import ConnectMongo
+from src.Pet.PetModel import PetModel
+from src.Pet.PetService import PetService
 
 class TestPetService(unittest.TestCase):
 
