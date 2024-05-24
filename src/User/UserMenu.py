@@ -1,5 +1,6 @@
 from src.utils.InputUtils import InputUtils
 from src.Pet.PetService import PetService
+from src.User.UserMenuServices import UserMenuServices
 
 class UserMenu:
     def __init__(self):
@@ -35,7 +36,7 @@ class UserMenu:
         elif option == 3:
             print("Elija el animal o los animales que desea adoptar: ")
             PetService.get_all_pets()
-            # metodo de seleccionar mascota
+            UserMenuServices.seleccionar_mascota()
             self.display_menu()
         elif option == 4:
             print("Otras opciones del usuario")
