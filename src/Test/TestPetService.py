@@ -38,7 +38,7 @@ class TestPetService(unittest.TestCase):
         self.pet_service_instance.create_pet()
         self.assertTrue(len(self.pet_service_instance.pet_collection.insert_one.call_args) > 0)
 
-    from config.ConnectMongo import ConnectMongo
+    from src.config.ConnectMongo import ConnectMongo
 
     class PetService:
         def __init__(self):

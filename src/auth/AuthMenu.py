@@ -12,6 +12,7 @@ class AuthMenu:
             "2 - Registro",
             "3 - Salir"
         ]
+
     def display_menu(self):
         for item in self.auth_menu:
             print(item)
