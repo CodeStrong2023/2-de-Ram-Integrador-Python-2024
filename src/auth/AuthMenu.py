@@ -1,6 +1,6 @@
-from utils.InputUtils import InputUtils
-from User.UserServices import UserServices
-from admin.AdminMenu import AdminMenu
+from src.utils.InputUtils import InputUtils
+from src.User.UserServices import UserServices
+from src.admin.AdminMenu import AdminMenu
 
 
 class AuthMenu:

@@ -1,6 +1,6 @@
-from User.UserMenuManager import UserMenuManager
-from utils.InputUtils import InputUtils
-from utils.StrUtils import StrUtils
+from src.User.UserMenuManager import UserMenuManager
+from src.utils.InputUtils import InputUtils
+from src.utils.StrUtils import StrUtils
 
 
 class AdminMenu:

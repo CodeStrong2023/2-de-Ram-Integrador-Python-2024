@@ -1,4 +1,4 @@
-from utils.InputUtils import InputUtils
+from src.utils.InputUtils import InputUtils
 
 class UserMenu:
     def __init__(self):

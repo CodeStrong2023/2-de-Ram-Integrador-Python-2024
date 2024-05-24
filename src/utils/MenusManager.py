@@ -1,4 +1,4 @@
-from utils.MenusEnum import MenusEnum
+from src.utils.MenusEnum import MenusEnum
 
 """ 
 Este menú manager se encarga de redirigir a los diferentes menús de la aplicación,

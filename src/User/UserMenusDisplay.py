@@ -1,7 +1,6 @@
-
 class UserMenusDisplay:
-    
-    def display_user (self, user):
+
+    def display_user(self, user):
         print("=" * 20)
         print("Nombre: ", user["name"])
         print("Email: ", user["email"])
