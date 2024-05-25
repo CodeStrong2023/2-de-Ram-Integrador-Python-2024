@@ -3,18 +3,14 @@ from src.User.UserServices import UserServices
 from src.admin.AdminMenu import AdminMenu
 
 
-class AuthMenu:
+class MainMenu:
     option = 0
 
-    def __init__(self):
-        self.auth_menu = [
-            "1 - Login",
-            "2 - Registro",
-            "3 - Salir"
-        ]
     def display_menu(self):
-        for item in self.auth_menu:
-            print(item)
+        print("1 - Login")
+        print("2 - Registro")
+        print("3 - Salir")
+
         self.option = InputUtils.int_input("Ingrese una opción: ")
         if self.option == 1:
             login_menu = AdminMenu()

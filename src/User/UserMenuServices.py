@@ -1,6 +1,7 @@
 from src.config.ConnectMongo import ConnectMongo
 from src.utils.InputUtils import InputUtils
 
+
 class UserMenuServices:
     def __init__(self):
         self.connection = ConnectMongo()
