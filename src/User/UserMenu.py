@@ -2,8 +2,9 @@ from src.utils.InputUtils import InputUtils
 from src.Pet.PetService import PetService
 from src.User.UserMenuServices import UserMenuServices
 
+
 class UserMenu:
-    def __init__(self):
+    def __init__(self, option):
         self.user_menu = [
             "1- Ver requisitos para adoptar un animal"
             "2- Ver animales en adopción"
@@ -11,14 +12,18 @@ class UserMenu:
             "4- Otras opciones del usuario"
             "5- Regresar al menú principal"
         ]
+        self.option = option
 
     def display_menu(self):
         for item in self.user_menu:
             print(item)
         self.option = InputUtils.int_input("Ingrese una opción: ")
-        self.select_menu(self.option)
+        self.select_menu(self.option, self.pet_service, self.user_menu_services)
 
-    def select_menu(self, option):
+    pet_service = PetService()
+    user_menu_services = UserMenuServices()
+
+    def select_menu(self, option, pet_service, user_menu_services):
         if option == 1:
             print(" Requisitos para adoptar un animal: ")
             print(f'''
@@ -31,12 +36,12 @@ class UserMenu:
             self.display_menu()
         elif option == 2:
             print("Animales en adopcion: ")
-            PetService.get_all_pets()
+            pet_service.get_all_pets()
             self.display_menu()
         elif option == 3:
             print("Elija el animal o los animales que desea adoptar: ")
-            PetService.get_all_pets()
-            UserMenuServices.seleccionar_mascota()
+            pet_service.get_all_pets()
+            user_menu_services.seleccionar_mascota()
             self.display_menu()
         elif option == 4:
             print("Otras opciones del usuario")
