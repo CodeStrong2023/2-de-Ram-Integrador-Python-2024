@@ -21,6 +21,7 @@ class UserMenuManager:
         elif option == 2:
             users = list(UserServices().get_all_users())
             StrUtils.create_header("Listado de usuarios registrados")
+            UserMenusDisplay().display_user_header()
             for user in users:
                 UserMenusDisplay().display_user(user)
             MenusManager(MenusEnum.USER_ADMIN_MENU)
@@ -63,5 +64,4 @@ class UserMenuManager:
             # Se puede cambiar esta sección por perfil de usuario para que pueda gestionar datos de su cuenta
             self.display_menu()
         elif option == 5:
-            print("Regresando al menú principal")
-            # insertar metodo para regresar al menu principal
+            MenusManager(MenusEnum.USER_MENU)

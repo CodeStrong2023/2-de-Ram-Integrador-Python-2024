@@ -1,5 +1,7 @@
+from src.User.UserMenuManager import UserMenuManager
 from src.utils.InputUtils import InputUtils
-from src.Pet.PetService import PetService
+
+
 class UserMenu:
     def __init__(self):
         self.user_menu = [
@@ -13,8 +15,5 @@ class UserMenu:
     def display_menu(self):
         for item in self.user_menu:
             print(item)
-        self.option = InputUtils.int_input("Ingrese una opción: ")
-        self.select_menu(self.option)
-
-
-
+        option = InputUtils.int_input("Ingrese una opción: ")
+        UserMenuManager().user_menu(option)
