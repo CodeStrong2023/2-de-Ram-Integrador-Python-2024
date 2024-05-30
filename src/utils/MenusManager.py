@@ -11,13 +11,13 @@ MenusManager
 
 class MenusManager:
     def __init__(self, menu):
-        from src.auth.AuthMenu import AuthMenu
+        from src.auth.MainMenu import MainMenu
         from src.admin.AdminMenu import AdminMenu
         from src.User.UserMenu import UserMenu
         from src.Pet.PetManagementMenu import PetManagementMenu
 
         if menu == MenusEnum.MAIN_MENU:
-            AuthMenu().display_menu()
+            MainMenu().display_menu()
         elif menu == MenusEnum.USER_MENU:
             UserMenu().user_menu()
         elif menu == MenusEnum.PET_MENU:
