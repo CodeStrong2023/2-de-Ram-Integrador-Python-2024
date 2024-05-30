@@ -44,3 +44,24 @@ class UserMenuManager:
             print("Opción no válida")
             print("")
             MenusManager(MenusEnum.USER_ADMIN_MENU)
+
+    def user_menu(self, option):
+        if option == 1:
+            UserMenusDisplay().user_requirements()
+        elif option == 2:
+            print("Animales en adopcion: ")
+        #     Agregar el display del listado de mascotas
+        elif option == 3:
+            # Modificar para que solicite el método de adopción de mascotas
+            # print("Elija el mascota o los mascotaes que desea adoptar: ")
+            # PetService.get_all_pets()
+            # UserMenuServices.seleccionar_mascota()
+            self.display_menu()
+        elif option == 4:
+            print("Otras opciones del usuario")
+            # insertar metodo con menu desplegable para que el usuario gestione su propio usuario
+            # Se puede cambiar esta sección por perfil de usuario para que pueda gestionar datos de su cuenta
+            self.display_menu()
+        elif option == 5:
+            print("Regresando al menú principal")
+            # insertar metodo para regresar al menu principal
