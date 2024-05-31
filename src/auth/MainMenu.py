@@ -11,7 +11,7 @@ class MainMenu:
         print("2 - Registro")
         print("3 - Salir")
 
-        self.option = InputUtils.int_input("Ingrese una opción: ")
+        self.option = InputUtils.int_input("Ingrese una opción: ", 1)
         if self.option == 1:
             login_menu = AdminMenu()
             login_menu.display_menu()

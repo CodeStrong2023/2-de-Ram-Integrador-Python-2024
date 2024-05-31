@@ -15,5 +15,5 @@ class UserMenu:
     def display_menu(self):
         for item in self.user_menu:
             print(item)
-        option = InputUtils.int_input("Ingrese una opción: ")
+        option = InputUtils.int_input("Ingrese una opción: ", 1)
         UserMenuManager().user_menu(option)

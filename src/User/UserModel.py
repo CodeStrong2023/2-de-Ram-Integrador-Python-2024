@@ -1,3 +1,5 @@
+import email
+
 from src.utils.InputUtils import InputUtils
 from src.utils.Validations.UserValidations import UserValidations
 
@@ -8,8 +10,8 @@ class UserModel:
             "name": InputUtils.str_input("Ingrese su nombre: "),
             "email": InputUtils.email_input("Ingrese su email: "),
             "password": InputUtils.str_input("Ingrese su password: "),
-            "age": InputUtils.int_input("Ingrese su edad: "),
-            "dni": InputUtils.str_input("Ingrese su dni: "),
+            "age": InputUtils.int_input("Ingrese su edad: ", 2),
+            "dni": InputUtils.int_input("Ingrese su dni: ", 8),
             "pets": [],
             "status": True,
             "role": "user",
