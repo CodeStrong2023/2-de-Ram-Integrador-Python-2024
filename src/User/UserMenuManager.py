@@ -41,7 +41,7 @@ class UserMenuManager:
             user_id = InputUtils.str_input("Ingrese el id del usuario: ")
             user_data_update = {
                 "name": InputUtils.str_input("Ingrese el nuevo nombre: "),
-                "edad": InputUtils.int_input("Ingrese la nueva edad: "),
+                "edad": InputUtils.int_input("Ingrese la nueva edad: ", 2),
                 "email": InputUtils.email_input("Ingrese el nuevo email: "),
             }
             UserServices().update_user(user_id, user_data_update)

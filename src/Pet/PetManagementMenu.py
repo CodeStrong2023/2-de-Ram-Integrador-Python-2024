@@ -84,7 +84,7 @@ class PetManagementMenu:
         while True:
             for item in self.auth_menu:
                 print(item)
-            option = InputUtils.int_input("Ingrese una opción: ")
+            option = InputUtils.int_input("Ingrese una opción: ", 1)
             if option == 1:
                 self.register_pet()
             elif option == 2:

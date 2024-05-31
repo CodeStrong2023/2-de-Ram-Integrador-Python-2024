@@ -11,21 +11,17 @@ class InputUtils:
         else:
             return entry
 
-
     @staticmethod
-    def int_input(input_string):
+    def int_input(input_string, max_len):
         entry = input(input_string)
-        if entry.isnumeric():
+        if entry.isnumeric() and len(entry) <= max_len:
             return int(entry)
-        else: 
-            # Revisar este bloque de código
-            if len(input_string) < 1:
-                print("Debe ingresar al menos un caracter")
-                return InputUtils.int_input(input_string)
-            else:
-                print("Debe ingresar un número")
-                return InputUtils.int_input(input_string)
-
+        if len(entry) < 1:
+            print("Debe ingresar al menos un caracter")
+            return InputUtils.int_input(input_string, max_len)
+        if len(entry) > max_len:
+            print(f"No puede ingresar más de {max_len} números")
+            return InputUtils.int_input(input_string, max_len)
 
     @staticmethod
     def email_input(email):
