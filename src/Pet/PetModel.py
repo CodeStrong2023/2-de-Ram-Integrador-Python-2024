@@ -9,7 +9,7 @@ class PetModel:
         self.name = InputUtils.str_input("Ingrese el nombre de la mascota: ")  # nombre
         self.species = InputUtils.str_input("Ingrese la especie de la mascota: ")  # especie
         self.breed = InputUtils.str_input("Ingrese la raza de la mascota: ")  # raza
-        self.age = InputUtils.int_input("Ingrese la edad de la mascota: ")  # edad
+        self.age = InputUtils.int_input("Ingrese la edad de la mascota: ", 2)  # edad
         self.gender = InputUtils.str_input("Ingrese el género de la mascota: ")  # género
         self.color = InputUtils.str_input("Ingrese el color de la mascota: ")
         self.hair = InputUtils.str_input("Ingrese el tipo de pelo de la mascota: ")  # tipo de pelo: con manchas, atigrado, etc

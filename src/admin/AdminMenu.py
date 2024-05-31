@@ -14,7 +14,7 @@ class AdminMenu:
         StrUtils.create_header("Menú de administrador")
         for item in self.admin_menu:
             print(item)
-        self.option = InputUtils.int_input("Ingrese una opción: ")
+        self.option = InputUtils.int_input("Ingrese una opción: ", 1)
         self.select_menu(self.option)
 
     def select_menu(self, option):
@@ -31,7 +31,7 @@ class AdminMenu:
         print("4 - Actualizar un usuario")
         print("5 - Eliminar un usuario")
         print("6 - Volver al menú principal")
-        option = InputUtils.int_input("Ingrese una opción: ")
+        option = InputUtils.int_input("Ingrese una opción: ", 1)
         UserMenuManager().user_admin_menu(option)
 
     def pet_menu(self):
@@ -42,5 +42,5 @@ class AdminMenu:
         print("4 - Actualizar una mascota")
         print("5 - Eliminar una mascota")
         print("6 - Volver al menú principal")
-        option = InputUtils.int_input("Ingrese una opción: ")
+        option = InputUtils.int_input("Ingrese una opción: ", 1)
         # Agregar lógica para las opciones de mascotas
