@@ -33,12 +33,26 @@ class UserMenuManager:
                 email_exists = UserValidations().check_mail_exists(email)
             user = UserServices().get_user_by_email(email)
             StrUtils.create_header("Usuario encontrado")
+            UserMenusDisplay().display_user_header()
             UserMenusDisplay().display_user(user)
             MenusManager(MenusEnum.USER_ADMIN_MENU)
         elif option == 4:
-            UserServices().update_user()
+            print("Actualizar usuario")
+            user_id = InputUtils.str_input("Ingrese el id del usuario: ")
+            user_data_update = {
+                "name": InputUtils.str_input("Ingrese el nuevo nombre: "),
+                "edad": InputUtils.int_input("Ingrese la nueva edad: "),
+                "email": InputUtils.email_input("Ingrese el nuevo email: "),
+            }
+            UserServices().update_user(user_id, user_data_update)
+            print("Usuario actualizado")
+            MenusManager(MenusEnum.USER_ADMIN_MENU)
+
         elif option == 5:
-            UserServices().delete_user()
+            user_id = InputUtils.str_input("Ingrese el id del usuario: ")
+            UserServices().delete_user(user_id)
+            print("Usuario eleminado")
+            MenusManager(MenusEnum.USER_ADMIN_MENU)
         elif option == 6:
             MenusManager(MenusEnum.ADMIN_MENU)
         else:
