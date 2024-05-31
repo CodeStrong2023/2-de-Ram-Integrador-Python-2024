@@ -3,11 +3,10 @@ from src.utils.InputUtils import InputUtils
 from src.admin.AdminMenu import AdminMenu
 from src.User.UserMenu import UserMenu
 
-
-
 '''
 Hay que corregir utiliza clases y métodos que no existen
 '''
+
 # class LoginUser:
 #     def login(self):
 #     print("")
@@ -25,3 +24,4 @@ Hay que corregir utiliza clases y métodos que no existen
 #     print("")
 #     print("Email o contraseña no válida")
 #     Menu.main_menu()
+w
