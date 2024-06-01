@@ -24,4 +24,3 @@ Hay que corregir utiliza clases y métodos que no existen
 #     print("")
 #     print("Email o contraseña no válida")
 #     Menu.main_menu()
-w

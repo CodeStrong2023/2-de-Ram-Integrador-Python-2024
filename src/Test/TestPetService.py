@@ -5,8 +5,8 @@ from src.config.ConnectMongo import ConnectMongo
 from src.Pet.PetModel import PetModel
 from src.Pet.PetService import PetService
 
-class TestPetService(unittest.TestCase):
 
+class TestPetService(unittest.TestCase):
 
     # Crear un mock para la conexión a la base de datos
     mock_db_connection = MagicMock()
@@ -52,7 +52,8 @@ class TestPetService(unittest.TestCase):
             inserted_pet = self.pet_collection.insert_one(pet_data)
             return inserted_pet.inserted_id  # Devolver el ID de la mascota insertada
 
-    # En tu código de prueba (TestPetService), puedes utilizar el siguiente fragmento para probar la inserción de una mascota:
+    # En tu código de prueba (TestPetService),
+    # puedes utilizar el siguiente fragmento para probar la inserción de una mascota:
 
     def test_save_pet(self):
         # Crear una instancia de PetService
@@ -105,16 +106,16 @@ class TestPetService(unittest.TestCase):
         mock_mongo.return_value = self.connect_mock
         self.pet_service_instance.pet_collection = self.connect_mock
         pet_data = {"name": "Thor",
-            "species": "Perro",
-            "breed": "Pastor Belga",
-            "age": 3,
-            "gender": "Macho",
-            "color": "Negro",
-            "hair": "Largo",
-            "size": "Grande",
-            "coat": "Largo",
-            "energy": "Muy energico",
-            "sociability": "Muy sociable"}
+                    "species": "Perro",
+                    "breed": "Pastor Belga",
+                    "age": 3,
+                    "gender": "Macho",
+                    "color": "Negro",
+                    "hair": "Largo",
+                    "size": "Grande",
+                    "coat": "Largo",
+                    "energy": "Muy energico",
+                    "sociability": "Muy sociable"}
         self.pet_service_instance.save_pet(pet_data)
         self.assertTrue(len(self.pet_service_instance.pet_collection.insert_one.call_args) > 0)
 
@@ -159,6 +160,7 @@ class TestPetService(unittest.TestCase):
         pet_data = {"name": "Prueba cambiada", "age": 3}
         self.pet_service_instance.update_pet(pet_id, pet_data)
         self.assertTrue(len(self.pet_service_instance.pet_collection.update_one.call_args) > 0)
+
 
 if __name__ == '__main__':
     unittest.main()
