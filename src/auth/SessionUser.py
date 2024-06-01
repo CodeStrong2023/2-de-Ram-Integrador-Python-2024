@@ -1,8 +1,9 @@
 class SessionUser:
     user_session = None
 
-    def __init__(self, user_name, role, email):
+    def __init__(self, id, user_name, role, email):
         self.user_session = {
+            "id": id,
             "name": user_name,
             "role": role,
             "email": email

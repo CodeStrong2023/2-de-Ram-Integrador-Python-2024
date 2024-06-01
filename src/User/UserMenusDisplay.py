@@ -17,7 +17,7 @@ class UserMenusDisplay:
             f"| {str(user['name']).ljust(28)} "
             f"| {str(user['email']).ljust(28)} "
             f"| {str(user['age']).ljust(4)} "
-            f"| {user['dni'].ljust(8)} "
+            f"| {str(user['dni']).ljust(8)} "
             f"| {str(user['status']).ljust(6)} |")
 
         print("")
