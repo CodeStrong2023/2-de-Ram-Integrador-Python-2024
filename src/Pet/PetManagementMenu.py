@@ -5,6 +5,7 @@ from src.Pet.PetModel import PetModel
 from src.utils.StrUtils import StrUtils
 from src.utils.InputUtils import InputUtils
 
+
 class PetService:
     def __init__(self):
         self.connection = ConnectMongo()
@@ -53,6 +54,7 @@ class PetService:
             print("Mascota eliminada con éxito")
         else:
             print("No se encontró la mascota")
+
 
 class PetManagementMenu:
     def __init__(self):
@@ -146,6 +148,7 @@ class PetManagementMenu:
             value = pet.get(key, "No disponible")
             print(f"{spanish_key}: {value}")
         print("-" * 20)
+
 
 # Ejemplo de uso
 if __name__ == "__main__":
