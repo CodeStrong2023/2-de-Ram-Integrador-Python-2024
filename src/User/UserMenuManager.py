@@ -48,7 +48,6 @@ class UserMenuManager:
             UserServices().update_user(user_id, user_data_update)
             print("Usuario actualizado")
             MenusManager(MenusEnum.USER_ADMIN_MENU)
-
         elif option == 5:
             user_id = InputUtils.str_input("Ingrese el id del usuario: ")
             UserServices().delete_user(user_id)

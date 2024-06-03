@@ -30,7 +30,7 @@ class AdminMenu:
         print("3 - Buscar un usuario por email")
         print("4 - Actualizar un usuario")
         print("5 - Eliminar un usuario")
-        print("6 - Volver al menú principal")
+        print("6 - Volver al menú de administrador")
         option = InputUtils.int_input("Ingrese una opción: ", 1)
         UserMenuManager().user_admin_menu(option)
 
@@ -41,6 +41,6 @@ class AdminMenu:
         print("3 - Buscar una mascota por nombre")
         print("4 - Actualizar una mascota")
         print("5 - Eliminar una mascota")
-        print("6 - Volver al menú principal")
+        print("6 - Volver al menú de administrador")
         option = InputUtils.int_input("Ingrese una opción: ", 1)
         # Agregar lógica para las opciones de mascotas
