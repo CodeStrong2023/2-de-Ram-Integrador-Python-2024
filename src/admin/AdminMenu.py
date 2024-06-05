@@ -8,6 +8,7 @@ class AdminMenu:
         self.admin_menu = [
             "1 - Opciones de usuarios",
             "2 - Opciones de mascotas",
+            "3 - Salir",
         ]
 
     def display_menu(self):
@@ -18,10 +19,15 @@ class AdminMenu:
         self.select_menu(self.option)
 
     def select_menu(self, option):
+        from src.auth.MainMenu import MainMenu
+
         if option == 1:
             self.user_menu()
         elif option == 2:
             print("Opciones de mascotas")
+        elif option == 3:
+            print("Volviendo al menú principal")
+            MainMenu().display_menu()
 
     def user_menu(self):
         StrUtils.create_header("Opciones de usuarios")

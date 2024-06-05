@@ -44,3 +44,5 @@ class PetService:
     def update_pet(self, pet_id, pet_data):
         self.pet_collection.update_one({"_id": pet_id}, {"$set": pet_data})
         print("Mascota actualizada con éxito")
+
+

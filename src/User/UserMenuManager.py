@@ -6,6 +6,8 @@ from src.utils.StrUtils import StrUtils
 from src.utils.InputUtils import InputUtils
 from src.utils.Validations.UserValidations import UserValidations
 from src.auth.SessionUser import SessionUser
+from src.Pet.PetService import PetService
+from src.Pet.PetMenuDisplay import PetMenuDisplay
 
 """ 
 Este menú manager se encarga de redirigir a los diferentes menús de la aplicación,
@@ -65,7 +67,12 @@ class UserMenuManager:
             UserMenusDisplay().user_requirements()
         elif option == 2:
             print("Animales en adopcion: ")
-        #     Agregar el display del listado de mascotas
+            pets = list(PetService().get_all_pets())
+            PetMenuDisplay().display_pet_header()
+            for pet in pets:
+                PetMenuDisplay().display_pet(pet)
+            MenusManager(MenusEnum.USER_MENU)
+
         elif option == 3:
             # Modificar para que solicite el método de adopción de mascotas
             print("Adoptar una mascota")
@@ -79,5 +86,3 @@ class UserMenuManager:
             self.display_menu()
         elif option == 5:
             MenusManager(MenusEnum.USER_MENU)
-
-
