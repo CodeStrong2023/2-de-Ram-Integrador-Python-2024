@@ -3,18 +3,21 @@ from src.Pet.PetModel import *
 from src.utils.StrUtils import StrUtils
 
 
+# Clase que gestiona las operaciones de la mascota en la base de datos de MongoDB
 class PetService:
+    
+    # Constructor de la clase
     def __init__(self):
         self.connection = ConnectMongo()
         self.pet_collection = self.connection.get_collection_db("pets")
 
-        # Método para guardar una nueva mascota en la base de datos
-
+    # Método para guardar una nueva mascota en la base de datos
     def save_pet(self, pet_data):
         # Utilizar el método insert_one de la colección para insertar la mascota
         inserted_pet = self.pet_collection.insert_one(pet_data)
         return inserted_pet.inserted_id  # Devolver el ID de la mascota insertada
 
+    # Crear Mascota
     def create_pet(self):
         StrUtils.create_header("Registro de Mascotas")
         pet = PetModel().create_pet()
