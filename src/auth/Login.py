@@ -4,7 +4,6 @@ from src.User.UserMenu import UserMenu
 from src.utils.InputUtils import InputUtils
 from src.auth.SessionUser import SessionUser
 
-
 class Login:
     user_services = UserServices()
     user_menu = UserMenu()
