@@ -1,10 +1,11 @@
 from src.utils.InputUtils import InputUtils
 
-
+# Clase que modela los datos de la mascota
 class PetModel:
 
     howMany = 0  # Contador para el número de mascotas
 
+    # Constructor de la clase
     def __init__(self):
         self.name = InputUtils.str_input("Ingrese el nombre de la mascota: ")  # nombre
         self.species = InputUtils.str_input("Ingrese la especie de la mascota: ")  # especie
