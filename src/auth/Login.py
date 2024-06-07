@@ -4,11 +4,13 @@ from src.User.UserMenu import UserMenu
 from src.utils.InputUtils import InputUtils
 from src.auth.SessionUser import SessionUser
 
+# Clase que gestiona el login de los usuarios
 class Login:
     user_services = UserServices()
     user_menu = UserMenu()
     admin_menu = AdminMenu()
 
+    # Método para iniciar sesión
     @staticmethod
     def login():
         email = InputUtils.email_input("Ingrese su email: ")
