@@ -12,10 +12,12 @@ class UserServices:
         self.user_collection = self.connection.db.get_collection("users")
 
     def create_user(self):
+        from auth.MainMenu import MainMenu
         StrUtils.create_header("Registro de Usuario")
         user = UserModel().create_user()
         self.user_collection.insert_one(user)
         print("Usuario Registrado")
+        MainMenu().display_menu()
 
     # Obtiene todos los usuarios
     def get_all_users(self):

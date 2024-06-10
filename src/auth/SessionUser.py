@@ -11,3 +11,11 @@ class SessionUser:
             "pets": user["pets"],
         }
         SessionUser.user_session = user
+
+    @staticmethod
+    def clear_session_user():
+        SessionUser.user_session = None
+
+    @staticmethod
+    def get_user_session():
+        return SessionUser.user_session

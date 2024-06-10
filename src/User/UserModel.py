@@ -13,7 +13,6 @@ class UserModel:
             "age": InputUtils.int_input("Ingrese su edad: ", 2),
             "dni": InputUtils.int_input("Ingrese su dni: ", 8),
             "pets": [],
-            "status": True,
             "role": "user",
         }
         # Chequea si el email ya se encuentra registrado
