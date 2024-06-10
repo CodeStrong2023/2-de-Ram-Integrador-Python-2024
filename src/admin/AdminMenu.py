@@ -2,7 +2,7 @@ from src.User.UserMenuManager import UserMenuManager
 from src.utils.InputUtils import InputUtils
 from src.utils.StrUtils import StrUtils
 
-
+# class AdminMenu que contiene las opciones del menú de administrador
 class AdminMenu:
     def __init__(self):
         self.admin_menu = [
@@ -10,7 +10,8 @@ class AdminMenu:
             "2 - Opciones de mascotas",
             "3 - Salir",
         ]
-
+        
+    # Método para mostrar el menú de administrador
     def display_menu(self):
         StrUtils.create_header("Menú de administrador")
         for item in self.admin_menu:
@@ -18,6 +19,7 @@ class AdminMenu:
         self.option = InputUtils.int_input("Ingrese una opción: ", 1)
         self.select_menu(self.option)
 
+    # Método para seleccionar una opción del menú de administrador
     def select_menu(self, option):
         from src.auth.MainMenu import MainMenu
 
@@ -29,6 +31,7 @@ class AdminMenu:
             print("Volviendo al menú principal")
             MainMenu().display_menu()
 
+    # Método para mostrar el menú de usuarios
     def user_menu(self):
         StrUtils.create_header("Opciones de usuarios")
         print("1 - Registrar un usuario")
@@ -40,6 +43,7 @@ class AdminMenu:
         option = InputUtils.int_input("Ingrese una opción: ", 1)
         UserMenuManager().user_admin_menu(option)
 
+    # Método para mostrar el menú de mascotas
     def pet_menu(self):
         StrUtils.create_header("Opciones de mascotas")
         print("1 - Registrar una mascota")
