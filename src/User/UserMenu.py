@@ -1,19 +1,18 @@
 from src.User.UserMenuManager import UserMenuManager
 from src.utils.InputUtils import InputUtils
+from utils.StrUtils import StrUtils
+from auth.SessionUser import SessionUser
 
 
 class UserMenu:
-    def __init__(self):
-        self.user_menu = [
-            "1- Ver requisitos para adoptar una mascota",
-            "2- Ver mascotas en adopción",
-            "3- Adoptar un mascota responsablemente",
-            "4- Otras opciones del usuario",
-            "5- Regresar al menú principal",
-        ]
 
     def display_menu(self):
-        for item in self.user_menu:
-            print(item)
+        StrUtils.create_header(f"Bienvenido ")
+        print("1- Ver requisitos para adoptar una mascota")
+        print("2- Ver mascotas en adopción")
+        print("3- Adoptar un mascota responsablemente")
+        print("4- Otras opciones del usuario")
+        print("5- Salir")
+
         option = InputUtils.int_input("Ingrese una opción: ", 1)
         UserMenuManager().user_menu(option)

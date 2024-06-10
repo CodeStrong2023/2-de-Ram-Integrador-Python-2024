@@ -85,4 +85,5 @@ class UserMenuManager:
             # Se puede cambiar esta sección por perfil de usuario para que pueda gestionar datos de su cuenta
             self.display_menu()
         elif option == 5:
-            MenusManager(MenusEnum.USER_MENU)
+            SessionUser.clear_session_user()
+            MenusManager(MenusEnum.MAIN_MENU)

@@ -19,7 +19,7 @@ class MenusManager:
         if menu == MenusEnum.MAIN_MENU:
             MainMenu().display_menu()
         elif menu == MenusEnum.USER_MENU:
-            UserMenu().user_menu()
+            UserMenu().display_menu()
         elif menu == MenusEnum.PET_MENU:
             PetManagementMenu().display_menu()
         elif menu == MenusEnum.ADMIN_MENU:

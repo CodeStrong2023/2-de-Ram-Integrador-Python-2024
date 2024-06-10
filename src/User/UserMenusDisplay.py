@@ -5,8 +5,7 @@ class UserMenusDisplay:
         email_header = "EMAIL".center(30, " ")
         age_header = "EDAD".center(6, " ")
         dni_header = "DNI".center(10, " ")
-        status_header = "STATUS".center(8, " ")
-        header = f"|{id_header}|{name_header}|{email_header}|{age_header}|{dni_header}|{status_header}|"
+        header = f"|{id_header}|{name_header}|{email_header}|{age_header}|{dni_header}|"
         print("°" * len(header))
         print(header)
         print("°" * len(header))
@@ -17,8 +16,7 @@ class UserMenusDisplay:
             f"| {str(user['name']).ljust(28)} "
             f"| {str(user['email']).ljust(28)} "
             f"| {str(user['age']).ljust(4)} "
-            f"| {str(user['dni']).ljust(8)} "
-            f"| {str(user['status']).ljust(6)} |")
+            f"| {str(user['dni']).ljust(8)} |")
 
         print("")
 
@@ -29,4 +27,3 @@ class UserMenusDisplay:
         print("3- Completar formulario de adopción.")
         print("4- Tiempo, compromiso y dedicación. Asegúrate de estar dispuesto a cuidarla y brindarle atención.")
         print("5- Ser una persona o familia responsable que los quiera como a un miembro más, los proteja y cuide.")
-
