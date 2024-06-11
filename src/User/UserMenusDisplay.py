@@ -21,6 +21,7 @@ class UserMenusDisplay:
         print("")
 
     def user_requirements(self):
+        print(" ")
         print(" Requisitos para adoptar una mascota: ")
         print("1- Ser mayor de edad.")
         print("2- Adjuntar fotocopias del DNI, del derecho y el reverso.")
