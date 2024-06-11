@@ -4,6 +4,7 @@ from src.Pet.PetManagementMenu import PetService
 from src.User.UserModel import *
 from src.config.ConnectMongo import ConnectMongo
 from src.utils.StrUtils import StrUtils
+from src.utils.MenusManager import *
 
 
 class UserServices:
@@ -45,8 +46,23 @@ class UserServices:
 
     # Agregamos una mascota a un usuario
     def add_pet_to_user(self, user_id, pet_id):
+        #Verificamos que el usuario ingrese un id válido de mongo
+        if not isinstance(pet_id, ObjectId):
+            print("Ingrese un id válido")
+            MenusManager(MenusEnum.USER_MENU)
+        # Buscamos la mascota por su id
         pet = PetService().get_pet_by_id(pet_id)
+
+        # Verificamos si la mascota con el id existe
+        if not pet:
+            print("Mascota no encontrada")
+            MenusManager(MenusEnum.USER_MENU)
+
+        # Agregamos al mascota al usuario y luego la
         self.user_collection.update_one(
             {"_id": ObjectId(user_id)}, {"$push": {"pets": pet}}
         )
+        # Eliminamos de la colleción de pets para que no este disponible en adopción
+        PetService().delete_pet(pet_id)
+
         return self.user_collection.find_one({"_id": ObjectId(user_id)})
