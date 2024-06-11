@@ -1,13 +1,15 @@
 from src.User.UserMenuManager import UserMenuManager
 from src.utils.InputUtils import InputUtils
-from utils.StrUtils import StrUtils
-from auth.SessionUser import SessionUser
+from src.utils.StrUtils import StrUtils
+from src.auth.SessionUser import SessionUser
+
 
 
 class UserMenu:
 
     def display_menu(self):
-        StrUtils.create_header(f"Bienvenido ")
+        user = SessionUser.get_user_session()
+        StrUtils.create_header(f"Bienvenido {user['name']}")
         print("1- Ver requisitos para adoptar una mascota")
         print("2- Ver mascotas en adopción")
         print("3- Adoptar un mascota responsablemente")

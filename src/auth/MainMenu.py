@@ -22,3 +22,6 @@ class MainMenu:
             register_menu.create_user()
         elif self.option == 3:
             print("Gracias por su visita")
+        else:
+            print("Ingrese una opción válida")
+            self.display_menu()

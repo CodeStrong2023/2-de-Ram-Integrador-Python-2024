@@ -77,7 +77,8 @@ class UserMenuManager:
             # Modificar para que solicite el método de adopción de mascotas
             print("Adoptar una mascota")
             pet_id = InputUtils.str_input("Ingrese el ID de la mascota: ")
-            UserServices().add_pet_to_user(SessionUser.user_session["id"], pet_id)
+            user = SessionUser.get_user_session()
+            UserServices().add_pet_to_user(user["id"], pet_id)
             print("Mascota adopada")
         elif option == 4:
             print("Otras opciones del usuario")
