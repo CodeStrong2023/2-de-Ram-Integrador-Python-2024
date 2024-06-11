@@ -2,6 +2,7 @@ from src.User.UserMenuManager import UserMenuManager
 from src.utils.InputUtils import InputUtils
 from src.utils.StrUtils import StrUtils
 
+
 # class AdminMenu que contiene las opciones del menú de administrador
 class AdminMenu:
     def __init__(self):
@@ -22,13 +23,13 @@ class AdminMenu:
     # Método para seleccionar una opción del menú de administrador
     def select_menu(self, option):
         from src.auth.MainMenu import MainMenu
-
         if option == 1:
             self.user_menu()
         elif option == 2:
-            print("Opciones de mascotas")
+            self.pet_menu()
         elif option == 3:
             print("Volviendo al menú principal")
+
             MainMenu().display_menu()
 
     # Método para mostrar el menú de usuarios
