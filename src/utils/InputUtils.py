@@ -20,7 +20,7 @@ class InputUtils:
             print("Debe ingresar al menos un caracter")
             return InputUtils.int_input(input_string, max_len)
         if len(entry) > max_len:
-            print(f"No puede ingresar más de {max_len} números")
+            print(f"No puede ingresar más de {max_len} número(s)")
             return InputUtils.int_input(input_string, max_len)
 
     @staticmethod
