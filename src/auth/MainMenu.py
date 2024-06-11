@@ -1,5 +1,6 @@
 from src.User.UserServices import UserServices
-from src.auth.Login import Login
+from src.auth import Login
+
 from src.utils.InputUtils import InputUtils
 from src.utils.StrUtils import StrUtils
 

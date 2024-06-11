@@ -1,6 +1,7 @@
 from src.User.UserServices import UserServices
-from src.admin.AdminMenu import AdminMenu
+
 from src.User.UserMenu import UserMenu
+from src.admin.AdminMenu import AdminMenu
 from src.utils.InputUtils import InputUtils
 from src.auth.SessionUser import SessionUser
 
