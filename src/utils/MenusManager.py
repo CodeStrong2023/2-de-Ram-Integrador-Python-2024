@@ -30,3 +30,5 @@ class MenusManager:
             AdminMenu().user_menu()
         elif menu == MenusEnum.PET_ADMIN_MENU:
             AdminMenu().pet_menu()
+        elif menu == MenusEnum.USER_PROFILE_MENU:
+            UserMenu().user_profile()

@@ -40,6 +40,7 @@ class UserMenuManager:
             UserMenusDisplay().display_user(user)
             MenusManager(MenusEnum.USER_ADMIN_MENU)
         elif option == 4:
+
             print("Actualizar usuario")
             user_id = InputUtils.str_input("Ingrese el id del usuario: ")
             user_data_update = {
@@ -74,17 +75,28 @@ class UserMenuManager:
             MenusManager(MenusEnum.USER_MENU)
 
         elif option == 3:
-            # Modificar para que solicite el método de adopción de mascotas
             print("Adoptar una mascota")
             pet_id = InputUtils.str_input("Ingrese el ID de la mascota: ")
             user = SessionUser.get_user_session()
             UserServices().add_pet_to_user(user["id"], pet_id)
             print("Mascota adopada")
         elif option == 4:
-            print("Otras opciones del usuario")
-            # insertar metodo con menu desplegable para que el usuario gestione su propio usuario
-            # Se puede cambiar esta sección por perfil de usuario para que pueda gestionar datos de su cuenta
-            self.display_menu()
+            MenusManager(MenusEnum.USER_PROFILE_MENU)
         elif option == 5:
             SessionUser.clear_session_user()
             MenusManager(MenusEnum.MAIN_MENU)
+
+    def user_profile_menu(self, option):
+
+        if option == 1:
+            print("1")
+        elif option == 2:
+            print("1")
+        elif option == 3:
+            print("1")
+        elif option == 4:
+            print("1")
+        else:
+            StrUtils.error_message("Ingrese una opción válida")
+            option = InputUtils.int_input("Ingrese una opción: ", 1)
+            self.user_profile_menu(option)
