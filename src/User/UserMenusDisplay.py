@@ -28,3 +28,10 @@ class UserMenusDisplay:
         print("3- Completar formulario de adopción.")
         print("4- Tiempo, compromiso y dedicación. Asegúrate de estar dispuesto a cuidarla y brindarle atención.")
         print("5- Ser una persona o familia responsable que los quiera como a un miembro más, los proteja y cuide.")
+
+    def user_profile(self):
+
+        print("1 - Mostrar los datos de perfil")
+        print("2 - Modificar email")
+        print("3 - Modificar contraseña")
+        print("4 - Volver")

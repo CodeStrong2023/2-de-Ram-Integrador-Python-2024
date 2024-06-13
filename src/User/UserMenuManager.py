@@ -17,6 +17,8 @@ si las opciones vienen del menú de usuario o del menú de administrador
 
 
 class UserMenuManager:
+    def __init__(self):
+        self.user = SessionUser.get_user_session()
 
     def user_admin_menu(self, option):
         if option == 1:
@@ -74,17 +76,37 @@ class UserMenuManager:
             MenusManager(MenusEnum.USER_MENU)
 
         elif option == 3:
-            # Modificar para que solicite el método de adopción de mascotas
             print("Adoptar una mascota")
             pet_id = InputUtils.str_input("Ingrese el ID de la mascota: ")
-            user = SessionUser.get_user_session()
-            UserServices().add_pet_to_user(user["id"], pet_id)
+            UserServices().add_pet_to_user(self.user["id"], pet_id)
             print("Mascota adopada")
         elif option == 4:
-            print("Otras opciones del usuario")
-            # insertar metodo con menu desplegable para que el usuario gestione su propio usuario
-            # Se puede cambiar esta sección por perfil de usuario para que pueda gestionar datos de su cuenta
-            self.display_menu()
+            MenusManager(MenusEnum.USER_PROFILE_MENU)
         elif option == 5:
             SessionUser.clear_session_user()
             MenusManager(MenusEnum.MAIN_MENU)
+
+    def user_profile_menu(self, option):
+
+        if option == 1:
+            user_data = UserServices().get_user_by_id(self.user["id"])
+            UserMenusDisplay().display_user_header()
+            UserMenusDisplay().display_user(user_data)
+            MenusManager(MenusEnum.USER_PROFILE_MENU)
+        elif option == 2:
+            new_email = InputUtils.email_input("Ingrese su nuevo email: ")
+            UserServices().update_user(self.user["id"], {"email": new_email})
+            print("Email actualizado")
+            MenusManager(MenusEnum.USER_PROFILE_MENU)
+        elif option == 3:
+            new_password = InputUtils.str_input("Ingrese su nuevo password")
+            UserServices().update_user(self.user["id"], {"password": new_password})
+            print("Password actualizado")
+            MenusManager(MenusEnum.USER_PROFILE_MENU)
+
+        elif option == 4:
+            MenusManager(MenusEnum.USER_MENU)
+        else:
+            StrUtils.error_message("Ingrese una opción válida")
+            option = InputUtils.int_input("Ingrese una opción: ", 1)
+            self.user_profile_menu(option)

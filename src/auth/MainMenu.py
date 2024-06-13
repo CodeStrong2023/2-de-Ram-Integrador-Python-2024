@@ -24,5 +24,5 @@ class MainMenu:
         elif self.option == 3:
             print("Gracias por su visita")
         else:
-            print("Ingrese una opción válida")
+            StrUtils.error_message("Ingrese una opción válida")
             self.display_menu()

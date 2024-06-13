@@ -8,3 +8,4 @@ class MenusEnum(Enum):
     LOGIN_MENU = 4
     USER_ADMIN_MENU = 5
     PET_ADMIN_MENU = 6
+    USER_PROFILE_MENU = 7
