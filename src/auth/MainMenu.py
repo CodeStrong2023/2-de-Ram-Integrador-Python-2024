@@ -1,5 +1,5 @@
 from src.User.UserServices import UserServices
-from src.auth import Login
+from src.auth.Login import Login
 
 from src.utils.InputUtils import InputUtils
 from src.utils.StrUtils import StrUtils
@@ -17,7 +17,7 @@ class MainMenu:
 
         self.option = InputUtils.int_input("Ingrese una opción: ", 1)
         if self.option == 1:
-            Login.login()
+            Login().login()
         elif self.option == 2:
             register_menu = UserServices()
             register_menu.create_user()

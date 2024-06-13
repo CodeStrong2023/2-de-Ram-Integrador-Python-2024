@@ -13,7 +13,7 @@ class UserServices:
         self.user_collection = self.connection.db.get_collection("users")
 
     def create_user(self):
-        from auth.MainMenu import MainMenu
+        from src.auth.MainMenu import MainMenu
         StrUtils.create_header("Registro de Usuario")
         user = UserModel().create_user()
         self.user_collection.insert_one(user)
@@ -46,7 +46,7 @@ class UserServices:
 
     # Agregamos una mascota a un usuario
     def add_pet_to_user(self, user_id, pet_id):
-        #Verificamos que el usuario ingrese un id válido de mongo
+        # Verificamos que el usuario ingrese un id válido de mongo
         if not isinstance(pet_id, ObjectId):
             print("Ingrese un id válido")
             MenusManager(MenusEnum.USER_MENU)
