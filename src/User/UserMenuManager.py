@@ -67,6 +67,7 @@ class UserMenuManager:
     def user_menu(self, option):
         if option == 1:
             UserMenusDisplay().user_requirements()
+            MenusManager(MenusEnum.USER_MENU)
         elif option == 2:
             print("Animales en adopcion: ")
             pets = list(PetService().get_all_pets())
