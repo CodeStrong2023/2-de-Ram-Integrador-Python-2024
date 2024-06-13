@@ -1,6 +1,7 @@
 from src.User.UserServices import UserServices
-from src.admin.AdminMenu import AdminMenu
+
 from src.User.UserMenu import UserMenu
+from src.admin.AdminMenu import AdminMenu
 from src.utils.InputUtils import InputUtils
 from src.auth.SessionUser import SessionUser
 
@@ -20,7 +21,7 @@ class Login:
 
         # Chequeamos que exista el usuario, que el password coincida y que su estatus esté en True
         if not user or user["password"] != password:
-            print("Usuairo o contraseña no válido")
+            print("Usuario o contraseña no válido")
             return MainMenu().display_menu()
 
         # Guardamos la sessión de usuario para usar en toda la app
