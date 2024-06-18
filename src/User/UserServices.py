@@ -1,6 +1,7 @@
 from bson import ObjectId
+from bson.errors import InvalidId
 
-from src.Pet.PetManagementMenu import PetService
+from src.pet.PetManagementMenu import PetService
 from src.User.UserModel import *
 from src.config.ConnectMongo import ConnectMongo
 from src.utils.StrUtils import StrUtils
@@ -46,23 +47,33 @@ class UserServices:
 
     # Agregamos una mascota a un usuario
     def add_pet_to_user(self, user_id, pet_id):
-        # Verificamos que el usuario ingrese un id válido de mongo
-        if not isinstance(pet_id, ObjectId):
+        # Verificamos que el usuario ingrese un id válido de MongoDB
+        try:
+            obj_id = ObjectId(pet_id)  # Intenta convertir el id a ObjectId
+        except (InvalidId, TypeError):
             print("Ingrese un id válido")
             MenusManager(MenusEnum.USER_MENU)
-        # Buscamos la mascota por su id
-        pet = PetService().get_pet_by_id(pet_id)
 
-        # Verificamos si la mascota con el id existe
-        if not pet:
-            print("Mascota no encontrada")
+        try:
+            # Buscamos la mascota por su id (con el id convertido a ObjectId)
+            pet = PetService().get_pet_by_id(obj_id)
+            if not pet:
+                print("Mascota no encontrada")
+                MenusManager(MenusEnum.USER_MENU)
+
+            # Agregar la mascota al usuario
+            self.user_collection.update_one(
+                {"_id": ObjectId(user_id)}, {"$push": {"pets": pet}}
+            )
+
+            # Eliminar la mascota de la colección de pets para que no esté disponible en adopción
+            PetService().delete_pet(obj_id)
+            print("Mascota adoptada con exito")
             MenusManager(MenusEnum.USER_MENU)
 
-        # Agregamos al mascota al usuario y luego la
-        self.user_collection.update_one(
-            {"_id": ObjectId(user_id)}, {"$push": {"pets": pet}}
-        )
-        # Eliminamos de la colleción de pets para que no este disponible en adopción
-        PetService().delete_pet(pet_id)
+            # Devolver el usuario actualizado
+            return self.user_collection.find_one({"_id": ObjectId(user_id)})
+        except Exception as e:
+            print(f"Error al agregar la mascota al usuario: {e}")
+            MenusManager(MenusEnum.USER_MENU)
 
-        return self.user_collection.find_one({"_id": ObjectId(user_id)})

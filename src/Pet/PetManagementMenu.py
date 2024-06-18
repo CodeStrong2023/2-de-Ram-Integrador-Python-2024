@@ -1,7 +1,7 @@
 import pymongo
 from bson import ObjectId
 from src.config.ConnectMongo import ConnectMongo
-from src.Pet.PetModel import PetModel
+from src.pet.PetModel import PetModel
 from src.utils.StrUtils import StrUtils
 from src.utils.InputUtils import InputUtils
 
@@ -86,12 +86,7 @@ class PetManagementMenu:
             "breed": "Raza",
             "age": "Edad",
             "gender": "Género",
-            "color": "Color",
-            "hair": "Tipo de pelo",
-            "size": "Tamaño",
-            "coat": "Largo del pelaje",
-            "energy": "Tipo de energía",
-            "sociability": "Sociabilidad"
+            "color": "Color"
         }
     # método que muestra el menú de opciones para la gestión de mascotas 
     def display_menu(self):

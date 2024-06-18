@@ -14,7 +14,7 @@ class MenusManager:
         from src.auth.MainMenu import MainMenu
         from src.admin.AdminMenu import AdminMenu
         from src.User.UserMenu import UserMenu
-        from src.Pet.PetManagementMenu import PetManagementMenu
+        from src.pet.PetManagementMenu import PetManagementMenu
 
         if menu == MenusEnum.MAIN_MENU:
             MainMenu().display_menu()

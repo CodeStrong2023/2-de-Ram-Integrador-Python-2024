@@ -1,5 +1,5 @@
 from src.config.ConnectMongo import ConnectMongo
-from src.Pet.PetModel import *
+from src.pet.PetModel import *
 from src.utils.StrUtils import StrUtils
 
 
