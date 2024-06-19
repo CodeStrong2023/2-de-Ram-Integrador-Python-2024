@@ -1,3 +1,5 @@
+import sys
+
 from src.User.UserServices import UserServices
 from src.auth.Login import Login
 
@@ -24,6 +26,8 @@ class MainMenu:
             register_menu.create_user()
         elif self.option == 3:
             print("Gracias por su visita")
+            sys.exit()
+
         else:
             StrUtils.error_message("Ingrese una opción válida")
             self.display_menu()

@@ -53,7 +53,15 @@ class PetManagementMenu:
                     print("Mascota no encontrada.")
             elif option == 4:
                 pet_id = input("Ingrese el ID de la mascota a actualizar: ")
-                self.pet_service.update_pet(pet_id)
+                if pet_id.strip():  # Verifica que el ID ingresado no esté vacío ni contenga solo espacios en blanco
+                    try:
+                        self.pet_service.update_pet(pet_id)
+                    except ValueError:
+                        print("Error: el ID de la mascota debe ser un valor válido")
+                    except Exception as e:
+                        print(f"Error al intentar actualizar la mascota: id no encontrado")
+                else:
+                    print("Error: debe ingresar un ID válido")
             elif option == 5:
                 pet_id = input("Ingrese el ID de la mascota a eliminar: ")
 
