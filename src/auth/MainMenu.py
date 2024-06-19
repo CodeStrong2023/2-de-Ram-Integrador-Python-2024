@@ -9,6 +9,7 @@ class MainMenu:
     option = 0
 
     def display_menu(self):
+        StrUtils.display_app_header()
         StrUtils.create_header("Menú Principal")
         print("1 - Login")
         print("2 - Registro")
