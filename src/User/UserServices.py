@@ -43,7 +43,7 @@ class UserServices:
     # Actualizamos un usuario con la información recibida
     def update_user(self, user_id, data):
         self.user_collection.update_one({"_id": ObjectId(user_id)}, {"$set": data})
-        print("Usuario Actualizado")
+        print("Usuario actualizado")
 
     # Agregamos una mascota a un usuario
     def add_pet_to_user(self, user_id, pet_id):
