@@ -41,9 +41,16 @@ class PetManagementMenu:
                 PetMenuDisplay().display_pet_header()
                 for pet in pets:
                     PetMenuDisplay().display_pet(pet)
+
             elif option == 3:
+
                 pet_id = input("Ingrese el ID de la mascota a buscar: ")
-                self.pet_service.get_pet_by_id(pet_id)
+                pet = self.pet_service.get_pet_by_id(pet_id)
+                if pet:
+                    PetMenuDisplay().display_pet_header()
+                    PetMenuDisplay().display_pet(pet)
+                else:
+                    print("Mascota no encontrada.")
             elif option == 4:
                 pet_id = input("Ingrese el ID de la mascota a actualizar: ")
                 self.pet_service.update_pet(pet_id)
