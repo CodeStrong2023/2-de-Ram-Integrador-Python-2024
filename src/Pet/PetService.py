@@ -32,13 +32,15 @@ class PetService:
 
     # Obtener mascota por su ID
     def get_pet_by_id(self, pet_id):
-        pet = self.pet_collection.find_one({"_id": pet_id})
-        return pet
+        try:
+            pet_id = ObjectId(pet_id)
+            pet = self.pet_collection.find_one({"_id": pet_id})
+            return pet
+        except Exception as e:
+            print("Error al buscar la mascota por ID:", e)
+            return None
 
-    # Guardar Mascota
-    # def save_pet(self, pet_data):
-     #   self.pet_collection.insert_one(pet_data)
-      #  print("Mascota guardada con éxito")
+
 
     # Actualizar Mascota
     '''Recibe el ID de una mascota y los nuevos datos de la mascota a editar. 
