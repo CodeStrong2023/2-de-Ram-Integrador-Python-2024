@@ -9,7 +9,7 @@ Adoptame es una aplicación desarrollada como parte del trabajo integrador del t
 ## Características
 
 - **Registro y autenticación de usuarios**: Los usuarios pueden registrarse y autenticarse para acceder a las funcionalidades de la aplicación.
-- **Publicación de mascotas**: Refugios y usuarios pueden publicar información sobre mascotas disponibles para adopción.
+- **Publicación de mascotas**: información sobre mascotas disponibles para adopción.
 - **Búsqueda y filtrado**: Los usuarios pueden buscar mascotas por diversos criterios como tipo, edad, tamaño, etc.
 - **Perfil de usuario**: Cada usuario tiene un perfil donde puede ver sus publicaciones y solicitudes de adopción.
 
