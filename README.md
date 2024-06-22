@@ -4,7 +4,7 @@ Trabajo integrador de Python Tercer Semestre
 
 ## Descripción
 
-Adoptame es una aplicación desarrollada como parte del trabajo integrador del tercer semestre de la carrera Tecnicatura Universitaria en Programación de la Universidad Tecnologica Nacional FRSR. Esta aplicación tiene como objetivo facilitar la adopción de mascotas mediante una plataforma que conecta a personas interesadas en adoptar con refugios de animales.
+Adoptame es una aplicación desarrollada como parte del trabajo integrador del tercer semestre de la carrera Tecnicatura Universitaria en Programación de la Universidad Tecnologica Nacional FRSR. Esta aplicación tiene como objetivo facilitar la adopción de mascotas.
 
 ## Características
 
@@ -12,7 +12,7 @@ Adoptame es una aplicación desarrollada como parte del trabajo integrador del t
 - **Publicación de mascotas**: Refugios y usuarios pueden publicar información sobre mascotas disponibles para adopción.
 - **Búsqueda y filtrado**: Los usuarios pueden buscar mascotas por diversos criterios como tipo, edad, tamaño, etc.
 - **Perfil de usuario**: Cada usuario tiene un perfil donde puede ver sus publicaciones y solicitudes de adopción.
-- **Sistema de notificaciones**: Notificaciones sobre el estado de las solicitudes de adopción.
+
 
 ## Instalación
 
