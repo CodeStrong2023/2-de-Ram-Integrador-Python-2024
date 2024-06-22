@@ -50,7 +50,6 @@ class UserMenuManager:
                 "email": InputUtils.email_input("Ingrese el nuevo email: "),
             }
             UserServices().update_user(user_id, user_data_update)
-            print("Usuario actualizado")
             MenusManager(MenusEnum.USER_ADMIN_MENU)
         elif option == 5:
             user_id = InputUtils.str_input("Ingrese el id del usuario: ")
@@ -100,7 +99,7 @@ class UserMenuManager:
             print("Email actualizado")
             MenusManager(MenusEnum.USER_PROFILE_MENU)
         elif option == 3:
-            new_password = InputUtils.str_input("Ingrese su nuevo password")
+            new_password = InputUtils.str_input("Ingrese su nuevo password: ")
             UserServices().update_user(self.user["id"], {"password": new_password})
             print("Password actualizado")
             MenusManager(MenusEnum.USER_PROFILE_MENU)

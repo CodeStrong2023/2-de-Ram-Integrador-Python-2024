@@ -9,7 +9,7 @@ class AdminMenu:
         self.admin_menu = [
             "1 - Opciones de usuarios",
             "2 - Opciones de mascotas",
-            "3 - Salir",
+            "3 - Regresar al menu principal",
         ]
         
     # Método para mostrar el menú de administrador

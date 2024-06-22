@@ -3,11 +3,12 @@ from pymongo.errors import PyMongoError
 from src.config.ConnectMongo import ConnectMongo
 from src.pet.PetModel import *
 from src.utils.StrUtils import StrUtils
+from bson import ObjectId
 
 
 # Clase que gestiona las operaciones de la mascota en la base de datos de MongoDB
 class PetService:
-    
+
     # Constructor de la clase
     def __init__(self):
         self.connection = ConnectMongo()
@@ -76,14 +77,13 @@ class PetService:
             print("Error al buscar la mascota por ID:", e)
             return None
 
-
-
     # Actualizar Mascota
     '''Recibe el ID de una mascota y los nuevos datos de la mascota a editar. 
     Este método actualiza los datos de la mascota en la colección "pets" 
     de la base de datos MongoDB utilizando el método update_one()'''
 
     def update_pet(self, pet_id, pet_data):
+<<<<<<< HEAD:src/Pet/PetService.py
         try:
             # Verifica que pet_id sea un ObjectId válido
             if not ObjectId.is_valid(pet_id):
@@ -108,6 +108,12 @@ class PetService:
         except Exception as e:
             # Maneja cualquier otro tipo de error
             print(f"Ocurrió un error inesperado: {e}")
+=======
+
+        pet = self.pet_collection.update_one({"_id": ObjectId(pet_id)}, {"$set": pet_data})
+
+        print("Mascota actualizada con éxito")
+>>>>>>> 0ebb1cb94d8df352d2f34d0645452ee7fdbf8847:src/pet/PetService.py
 
     def delete_pet(self, pet_id):
         try:

@@ -13,9 +13,9 @@ class UserMenu:
         StrUtils.create_header(f"Bienvenido {user['name']}")
         print("1- Ver requisitos para adoptar una mascota")
         print("2- Ver mascotas en adopción")
-        print("3- Adoptar un mascota responsablemente")
+        print("3- Adoptar una mascota responsablemente")
         print("4- Ir al perfil")
-        print("5- Salir")
+        print("5- Regresar al menú principal")
 
         option = InputUtils.int_input("Ingrese una opción: ", 1)
         UserMenuManager().user_menu(option)
