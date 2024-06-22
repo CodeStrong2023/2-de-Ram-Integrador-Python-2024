@@ -39,12 +39,6 @@ Adoptame es una aplicación desarrollada como parte del trabajo integrador del t
 
 
 
-
-
-## Contacto
-
-Si tienes alguna pregunta o sugerencia, por favor abre un issue o contacta a [tu_email@example.com](mailto:tu_email@example.com).
-
 ---
 
-¡Gracias por usar Adoptame!
+¡Gracias por usar Adoptame! 
