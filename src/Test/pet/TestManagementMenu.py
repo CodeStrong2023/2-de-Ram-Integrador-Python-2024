@@ -27,9 +27,7 @@ class TestPetManagementMenu(unittest.TestCase):
         menu = PetManagementMenu()
         menu.pet_service = PetService()  # Mock or create a fake PetService for testing
         menu.display_menu()
-        # Add assertions based on the expected behavior of option 2
-
-    # Add more test methods for other menu options
+        
 
 if __name__ == '__main__':
     unittest.main()

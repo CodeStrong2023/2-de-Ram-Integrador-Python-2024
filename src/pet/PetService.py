@@ -83,7 +83,7 @@ class PetService:
     de la base de datos MongoDB utilizando el método update_one()'''
 
     def update_pet(self, pet_id, pet_data):
-<<<<<<< HEAD:src/Pet/PetService.py
+
         try:
             # Verifica que pet_id sea un ObjectId válido
             if not ObjectId.is_valid(pet_id):
@@ -108,12 +108,12 @@ class PetService:
         except Exception as e:
             # Maneja cualquier otro tipo de error
             print(f"Ocurrió un error inesperado: {e}")
-=======
+
 
         pet = self.pet_collection.update_one({"_id": ObjectId(pet_id)}, {"$set": pet_data})
 
         print("Mascota actualizada con éxito")
->>>>>>> 0ebb1cb94d8df352d2f34d0645452ee7fdbf8847:src/pet/PetService.py
+
 
     def delete_pet(self, pet_id):
         try:
