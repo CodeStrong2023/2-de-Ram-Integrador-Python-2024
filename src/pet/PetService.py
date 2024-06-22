@@ -1,11 +1,12 @@
 from src.config.ConnectMongo import ConnectMongo
 from src.pet.PetModel import *
 from src.utils.StrUtils import StrUtils
+from bson import ObjectId
 
 
 # Clase que gestiona las operaciones de la mascota en la base de datos de MongoDB
 class PetService:
-    
+
     # Constructor de la clase
     def __init__(self):
         self.connection = ConnectMongo()
@@ -26,6 +27,7 @@ class PetService:
 
     # Obtener todas las mascotas
     '''Devuelve un arreglo de mascotas con todas las mascotas en la BBDD'''
+
     def get_all_pets(self):
         pets = self.pet_collection.find()
         return [pet for pet in pets]
@@ -40,14 +42,15 @@ class PetService:
             print("Error al buscar la mascota por ID:", e)
             return None
 
-
-
     # Actualizar Mascota
     '''Recibe el ID de una mascota y los nuevos datos de la mascota a editar. 
     Este método actualiza los datos de la mascota en la colección "pets" 
     de la base de datos MongoDB utilizando el método update_one()'''
+
     def update_pet(self, pet_id, pet_data):
-        self.pet_collection.update_one({"_id": pet_id}, {"$set": pet_data})
+
+        pet = self.pet_collection.update_one({"_id": ObjectId(pet_id)}, {"$set": pet_data})
+
         print("Mascota actualizada con éxito")
 
     def delete_pet(self, pet_id):
